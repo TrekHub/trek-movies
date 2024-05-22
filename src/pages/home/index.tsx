@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import bannerImg from "../../assets/images/banner.jpg";
 import { MovieColumn } from "../../components/MovieColumn";
 import { fetchUpcomingMovies } from "./query";
+import { MovieType } from "../../typings/typings";
 
 export const HomePage = () => {
   const {
@@ -13,9 +14,9 @@ export const HomePage = () => {
     queryFn: fetchUpcomingMovies,
   });
   return (
-    <div className="h-screen bg-slate-900">
+    <div className="min-h-screen bg-slate-900">
       <div className="flex flex-col h-full w-full">
-        <div className="h-[600px] w-full bg-red-600">
+        <div className="h-[400px] w-full bg-red-600">
           <img
             src={bannerImg}
             alt="hero"
@@ -23,19 +24,20 @@ export const HomePage = () => {
           />
         </div>
 
-        <div className="p-8 ">
-          <div className="text-pink-600 font-bold text-xl font-urbanist text-start">
-            Upcoming Movies
-          </div>
-          <div className="mt-10">
+        <div className="p-8">
+          <div className="">
             {isLoadingUpcomingMovies && <div>Loading...</div>}
             {isErrorUpcomingMovies && <div>Error loading upcoming movies</div>}
             {!isLoadingUpcomingMovies && upcomingMovieData && (
               <MovieColumn
                 data={upcomingMovieData.results}
-                displayType="upcoming"
+                displayType={MovieType.Upcoming}
               />
             )}
+
+            
+
+
           </div>
         </div>
       </div>

@@ -6,3 +6,8 @@ export interface MoviePosterData {
   vote_average: number;
   release_date: string;
 }
+
+export enum MovieType {
+  Popular = "popular",
+  Upcoming = "upcoming",
+}
