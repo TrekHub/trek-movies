@@ -1,6 +1,7 @@
 import { useMutation } from "@tanstack/react-query";
 import { mutationLogin } from "./mutation";
 import { useNavigate } from "react-router-dom";
+import bannerImg from "../../assets/images/banner.jpg";
 
 export const Auth = () => {
   const { data, mutate } = useMutation({
@@ -21,8 +22,14 @@ export const Auth = () => {
   return (
     <div className="w-full flex  flex-col justify-center items-center  bg-slate-900 h-screen">
       <div className=" h-4/6 w-4/5  bg-white flex justify-center rounded-lg  items-center">
-        <div className="w-2/4 h-full bg-pink-700"></div>
-        <div className="w-2/4 h-full ">
+        <div className="w-2/4 h-full bg-pink-700">
+          <img
+            src={bannerImg}
+            alt="hero"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="w-2/4 h-full  ">
           <form className="w-3/5 h-full flex flex-col justify-center mx-auto ">
             <div className="mb-5 ">
               <label

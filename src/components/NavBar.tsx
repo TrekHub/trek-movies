@@ -10,7 +10,7 @@ export const NavBar = () => {
             to="/"
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
-            <Clapperboard className="w-8 h-8 text-blue-500 dark:text-blue-400" />
+            <Clapperboard className="w-8 h-8 text-pink-600 dark:text-blue-400" />
             <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
               Trek Movies
             </span>
@@ -124,7 +124,7 @@ export const NavBar = () => {
               <li>
                 <Link
                   to="/"
-                  className="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
+                  className="block py-2 px-3 text-white bg-pink-600 rounded md:bg-transparent md:text-pink-600 md:p-0 md:dark:text-blue-500"
                   aria-current="page"
                 >
                   Home
