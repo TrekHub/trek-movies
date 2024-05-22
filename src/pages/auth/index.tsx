@@ -1,18 +1,20 @@
 import { useMutation } from "@tanstack/react-query";
 import { mutationLogin } from "./mutation";
+import { useNavigate } from "react-router-dom";
 
 export const Auth = () => {
-  const { isSuccess, isError, data, error, mutate } = useMutation({
+  const { data, mutate } = useMutation({
     mutationKey: ["login"],
     mutationFn: mutationLogin,
   });
-
+  const navigate = useNavigate();
   const handleLogin = async () => {
     try {
-      await mutate(); // Call mutate directly, no event argument needed
+      await mutate();
+      localStorage.setItem("guest_session_id", data.guest_session_id);
+      navigate("/");
     } catch (err) {
       console.error("Guest login failed:", err);
-      // Handle errors, perhaps show an error message to the user
     }
   };
 
@@ -82,10 +84,6 @@ export const Auth = () => {
             >
               Login as Guest
             </button>
-
-            {isSuccess && <p>Successfully logged in!</p>}
-            {isError && <p>Error logging in: {error.message}</p>}
-            {data && console.log(data)}
           </form>
         </div>
       </div>
