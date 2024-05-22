@@ -8,7 +8,7 @@ interface MovieColumnProps {
 export const MovieColumn = (props: MovieColumnProps) => {
   return (
     <div className="movie-column">
-      <h2>{props.displayType}</h2>
+      <h2>{props.data[0].title}</h2>
       {/* <ul>
         {props.data.map((movie) => (
           <li key={movie.id}>
