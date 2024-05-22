@@ -1,4 +1,5 @@
 import bannerImg from "../../assets/images/banner.jpg";
+import { MovieColumn } from "../../components/MovieColumn";
 
 export const HomePage = () => {
   return (
@@ -13,10 +14,13 @@ export const HomePage = () => {
         </div>
 
         <div className="p-8 ">
-        <div className="text-pink-600 font-bold text-xl font-urbanist text-start">Upcoming Movies</div>
-
+          <div className="text-pink-600 font-bold text-xl font-urbanist text-start">
+            Upcoming Movies
+          </div>
+          <div className="mt-10">
+            <MovieColumn data={[]} displayType="upcoming" />
+          </div>
         </div>
-
       </div>
     </div>
   );
