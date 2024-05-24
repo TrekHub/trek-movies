@@ -10,9 +10,7 @@ export const MovieColumn = (props: MovieColumnProps) => {
     <div className="movie-column">
       <ul className="container flex flex-col mx-auto justify-start ">
         <div className="text-pink-600 font-bold text-xl font-urbanist text-start mb-8 ">
-          {props.displayType === "popular"
-            ? "Popular Movies"
-            : "Upcoming Movies"}
+         {`${props.displayType} Movies`} 
         </div>
         <div className="overflow-x-auto">
           <div className="flex text-left space-x-4 w-full">

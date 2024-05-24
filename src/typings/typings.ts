@@ -8,6 +8,7 @@ export interface MoviePosterData {
 }
 
 export enum MovieType {
-  Popular = "popular",
-  Upcoming = "upcoming",
+  Popular = "Popular",
+  Upcoming = "Upcoming",
+  topRated = "Top Rated",
 }

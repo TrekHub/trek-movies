@@ -1,7 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
 import bannerImg from "../../assets/images/banner.jpg";
 import { MovieColumn } from "../../components/MovieColumn";
-import { fetchPopularMovies, fetchUpcomingMovies } from "./query";
+import {
+  fetchPopularMovies,
+  fetchTopRatedMovies,
+  fetchUpcomingMovies,
+} from "./query";
 import { MovieType } from "../../typings/typings";
 
 export const HomePage = () => {
@@ -21,6 +25,15 @@ export const HomePage = () => {
   } = useQuery({
     queryKey: ["popularMovies"],
     queryFn: fetchPopularMovies,
+  });
+
+  const {
+    data: topRatedMovieData,
+    isLoading: isLoadingTopRatedMovies,
+    isError: isErrorTopRatedMovies,
+  } = useQuery({
+    queryKey: ["topRatedMovies"],
+    queryFn: fetchTopRatedMovies,
   });
   return (
     <div className="min-h-screen bg-slate-900">
@@ -50,6 +63,15 @@ export const HomePage = () => {
               <MovieColumn
                 data={popularMovieData.results}
                 displayType={MovieType.Popular}
+              />
+            )}
+
+            {isLoadingTopRatedMovies && <div>Loading...</div>}
+            {isErrorTopRatedMovies && <div>Error loading top rated movies</div>}
+            {!isLoadingTopRatedMovies && topRatedMovieData && (
+              <MovieColumn
+                data={topRatedMovieData.results}
+                displayType={MovieType.topRated}
               />
             )}
           </div>
