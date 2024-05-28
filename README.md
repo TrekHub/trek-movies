@@ -38,10 +38,6 @@ Trek Movies is your one-stop shop for discovering and organizing the world of mo
 * **API:** The Movie Database (TMDb) API for comprehensive movie data and metadata.
 
 
-
-
-## 🛠️ Installation & Setup
-
 ## 🛠️ Installation & Setup
 
 1. **Clone the Repository:**
