@@ -35,14 +35,16 @@ export const HomePage = () => {
     queryKey: ["topRatedMovies"],
     queryFn: fetchTopRatedMovies,
   });
+
+  const backdrop_path = `https://image.tmdb.org/t/p/original${upcomingMovieData?.results[1]?.backdrop_path}`
   return (
     <div className="min-h-screen bg-slate-900">
       <div className="flex flex-col h-full w-full">
         <div className="h-[400px] w-full bg-red-600">
           <img
-            src={bannerImg}
+            src={backdrop_path || bannerImg}
             alt="hero"
-            className="w-full h-full object-cover"
+            className="w-full h-screen object-cover"
           />
         </div>
 
