@@ -12,11 +12,11 @@ export const NavBar = () => {
           >
             <Clapperboard className="w-8 h-8 text-pink-600 dark:text-blue-400" />
             <span className="self-center text-2xl text-white font-semibold whitespace-nowrap dark:text-white">
-              Trek Movies
+              Trek Movies 
             </span>
           </Link>
           <div className="flex md:order-2">
-            <button
+            <button 
               type="button"
               data-collapse-toggle="navbar-search"
               aria-controls="navbar-search"
