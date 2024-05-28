@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { MoviePosterData, MovieType } from "../typings/typings";
+import './style.css'
 
 interface MovieColumnProps {
   data: MoviePosterData[];
@@ -13,7 +14,7 @@ export const MovieColumn = (props: MovieColumnProps) => {
         <div className="text-pink-600 font-bold text-xl font-urbanist text-start mb-8 ">
           {`${props.displayType} Movies`}
         </div>
-        <div className="overflow-x-auto overflow-x:hidden">
+        <div className="overflow-x-auto overflow-x:hidden  no-scrollbar">
           <div className="flex text-left space-x-4 w-full">
             {props.data.map((movie) => (
               <Link to={`/movie/${movie.id}`}>
